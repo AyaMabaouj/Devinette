@@ -5,6 +5,7 @@ import static com.example.devinette.R.id.editText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -20,14 +21,15 @@ import java.util.concurrent.TimeUnit;
 public class GameHard2 extends AppCompatActivity {
 
     TextView result;
-    EditText nbr = (EditText) findViewById(editText);
-    Button valider = findViewById(R.id.valider);
+    EditText nbr;
+    Button valider;
     TextView time;
     Button start_pause;
-    TextView score;
+    TextView scoreR;
+    ImageButton highScore;
     int n = 0;
     String ch = "";
-    int scoreR = 100;
+    int score = 100;
     int nbSecondesPasse = 0;
     private  static final long start_time_in_millis = 60000;
     ImageButton restart;
@@ -35,13 +37,14 @@ public class GameHard2 extends AppCompatActivity {
     private  boolean mTimerRunning;
     private long mTimeLeftInMiliss = start_time_in_millis;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_hard2);
+        nbr = (EditText) findViewById(R.id.editText);
+        valider = findViewById(R.id.valider);
         result = (TextView) findViewById(R.id.result);
-        score = (TextView) findViewById(R.id.score);
+        scoreR = (TextView) findViewById(R.id.score);
         start_pause = findViewById(R.id.start_pause);
         restart = findViewById(R.id.restart);
         time = (TextView)findViewById(R.id.timer);
@@ -80,7 +83,13 @@ public class GameHard2 extends AppCompatActivity {
 
                     result.setText("Bravo, Vous avez Gagné ! : " +String.valueOf(n)+ " " +"nombres d'essais");
                     countDownTimer.cancel();
-                    score.setText("Score : " +(scoreR - (n + nbSecondesPasse)));
+                    scoreR.setText("Score : " + (score - (n + nbSecondesPasse)));
+                    Intent i = new Intent(getApplicationContext(),Home2.class);
+                    i.putExtra("score", scoreR.getText().toString());
+                    startActivity(i);
+                    finish();
+                    start_pause.setText("Restart");
+
                 }
                 else if (valeurSaisie  > valeur ) {
                     result.setText("Votre nombre est grande !! " );
@@ -118,7 +127,7 @@ public class GameHard2 extends AppCompatActivity {
                 start_pause.setText("start");
                 start_pause.setVisibility(View.VISIBLE);
                 restart.setVisibility(View.INVISIBLE);
-                score.setText("Score :" +(scoreR -(n+ nbSecondesPasse)));
+                scoreR.setText("Score :" +(score -(n+ nbSecondesPasse)));
 
             }
         }.start();

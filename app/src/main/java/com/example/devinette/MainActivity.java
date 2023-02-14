@@ -28,21 +28,22 @@ public class MainActivity extends AppCompatActivity {
         radiobtn2 = findViewById(R.id.difficile);
 
         startG.setOnClickListener(new View.OnClickListener() {
-            int checkedRadioId = radioG.getCheckedRadioButtonId();
-            RadioButton checkedRadio = (RadioButton)findViewById(checkedRadioId);
+
             @Override
             public void onClick(View v) {
-
+                int rid = radioG.getCheckedRadioButtonId();
+               RadioButton checkedRadio = findViewById(rid);
                 if(checkedRadio.equals(radiobnt1)) {
                     Toast.makeText(getApplicationContext(),checkedRadio.getText().toString(),Toast.LENGTH_SHORT).show();
                     Intent i1 = new Intent(MainActivity.this, Deviner_nombre.class);
                     startActivity(i1);
                 }  else if(checkedRadio.equals(radiobtn2) ){
                     Toast.makeText(getApplicationContext(),checkedRadio.getText().toString(),Toast.LENGTH_SHORT).show();
-                   Intent i2 = new Intent(MainActivity.this, Home2.class);
+                   Intent i2 = new Intent(MainActivity.this, GameHard2.class);
                     startActivity(i2);
                 }
             }
         });
+
     }
     }

@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class Home2 extends AppCompatActivity {
     Button entrer;
+    EditText nom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,12 +19,13 @@ public class Home2 extends AppCompatActivity {
 
         entrer.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i1 = new Intent(Home2.this, GameHard2.class);
-                startActivity(i1);
-               /* Intent i2 = new Intent(MainActivity.this,ListActivity.class);
-                i2.putExtra("nom", nom.getText().toString());
-                i2.putExtra("prenom", nom.getText().toString());
-                startActivity(i2);*/
+                BD myDB = new BD(Home2.this);
+                Intent i1 = getIntent();
+                String score = i1.getStringExtra("score");
+                myDB.addNewGamer(nom.getText().toString().trim(),score.trim());
+                Intent i = new Intent(getApplicationContext(),ListActivity.class);
+                startActivity(i);
+                finish();
             }});
     }
     }

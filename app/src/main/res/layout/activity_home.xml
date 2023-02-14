@@ -11,22 +11,21 @@
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:text="Devinette"
         android:background="@color/AliceBlue"
         android:textAlignment="center"
         android:textColor="@color/rose"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:typeface="serif" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="200dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/number_guessing_game_transparent"
+        app:srcCompat="@drawable/cong"
         />
     <TextView
         android:id="@+id/btn"

@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class BD extends SQLiteOpenHelper {
 
@@ -48,15 +51,29 @@ public class BD extends SQLiteOpenHelper {
 
     }
 
-Cursor readAllData(){
-        String query = "SELECT * FROM " + TABLE_NAME;
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = null;
-        if (db != null){
-           cursor =  db.rawQuery(query,null);
+    public List<Gamer> getAllGamers() {
+        List<Gamer> gamersList = new ArrayList<Gamer>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_NAME + " Order by score DESC Limit 10";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Gamer gamer = new Gamer();
+                gamer.setId(String.valueOf(Integer.parseInt(cursor.getString(0))));
+                gamer.setNomG(cursor.getString(1));
+                gamer.setScoreG(cursor.getString(2));
+                // Adding contact to list
+                gamersList.add(gamer);
+            } while (cursor.moveToNext());
         }
-        return  cursor;
-}
+
+        // return contact list
+        return gamersList;
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

@@ -1,18 +1,21 @@
 package com.example.devinette;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
     Button entrer;
     EditText nom;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,5 +34,6 @@ public class Home extends AppCompatActivity {
                 finish();
             }});
     }
+
 
 }

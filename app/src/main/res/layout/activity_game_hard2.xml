@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/DarkSlateGray">
+    android:background="@color/Beige">
 
     <TextView
         android:id="@+id/text"
@@ -37,7 +37,7 @@
         android:text="Score:"
         android:layout_marginTop="7dp"
         android:textSize="25sp"
-        android:textColor="@color/LightGrey"
+        android:textColor="@color/DarkSlateGray"
         android:textStyle="bold"
         android:layout_marginLeft="5dp"/>
 
@@ -58,7 +58,7 @@
         android:layout_width="57dp"
         android:layout_height="51dp"
         android:layout_gravity="center"
-        android:src="@drawable/ic_baseline_timer" />
+        android:src="@drawable/ic_timer" />
 
     <TextView
         android:id="@+id/timer"
@@ -68,7 +68,7 @@
         android:text="00:00"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
+        android:textColor="@color/gray"
         android:textAlignment="center"
         />
 

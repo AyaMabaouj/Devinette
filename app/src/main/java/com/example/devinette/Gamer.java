@@ -2,22 +2,26 @@ package com.example.devinette;
 
 public class Gamer {
 
-    String i;
+    String id;
     String nomG;
     String scoreG;
 
-    public Gamer(String i, String nomG, String scoreG) {
-        this.i = i;
+    public Gamer(String id, String nomG, String scoreG) {
+        this.id = id;
         this.nomG = nomG;
         this.scoreG = scoreG;
     }
 
-    public String getI() {
-        return i;
+    public Gamer() {
+
     }
 
-    public void setI(String i) {
-        this.i = i;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String i) {
+        this.id = i;
     }
 
     public String getNomG() {

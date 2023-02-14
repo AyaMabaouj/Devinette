@@ -40,7 +40,6 @@ public class Deviner_nombre extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deviner_nombre);
-        highScore = (ImageButton)findViewById(R.id.HighScore);
         nbr = (EditText) findViewById(R.id.edit);
         valider = findViewById(R.id.btn2);
         result = (TextView) findViewById(R.id.result);
@@ -52,14 +51,7 @@ public class Deviner_nombre extends AppCompatActivity {
 
         int valeur =  (int) (Math.random()*100);
 
-     highScore.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View view) {
-             Intent i1 = new Intent(Deviner_nombre.this, ListActivity.class);
-             startActivity(i1);
-             Toast.makeText(getApplicationContext(),"Heigh score",Toast.LENGTH_SHORT).show();
-         }
-     });
+
 
         start_pause.setOnClickListener(new View.OnClickListener() {
             @Override

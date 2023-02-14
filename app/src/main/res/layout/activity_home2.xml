@@ -6,27 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".Home2"
     android:orientation="vertical"
-    android:background="@color/DarkSlateGray">
+    android:background="@color/Beige">
 
     <TextView
         android:id="@+id/textH"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="Devinette"
+        android:layout_height="wrap_content"
         android:background="@color/LightSeaGreen"
+        android:text="Devinette"
         android:textAlignment="center"
         android:textColor="@color/Azure"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:typeface="serif" />
 
     <ImageView
         android:id="@+id/imageViewH"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="200dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/number_guessing_game_transparent"
+        app:srcCompat="@drawable/cong"
         />
     <TextView
         android:id="@+id/btnH"
@@ -36,9 +35,9 @@
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:text="Saisir Votre Nom et Prenom"
-        android:textColor="@color/Azure"
+        android:textColor="@color/LightSeaGreen"
         android:textStyle="bold"
-        android:background="@color/LightSeaGreen"
+        android:background="@color/Azure"
         android:textSize="25sp" />
     <EditText
         android:id="@+id/editH"
@@ -62,7 +61,6 @@
         android:textColor="@color/White"
         android:textSize="20sp"
         />
-
 
 
 </LinearLayout>

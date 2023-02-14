@@ -46,16 +46,13 @@ public class ListActivity extends AppCompatActivity {
     }
 
     void displayData(){
-        Cursor cursor = myDB.readAllData();
-        if(cursor.getCount() == 0) {
-            Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
-        }else{
-            while (cursor.moveToNext()){
-                //id.add(cursor.getString(0));
-                nom.add(cursor.getString(1));
-                score.add(cursor.getString(2));
+        List<Gamer> gamers= myDB.getAllGamers();
 
-            }
+        for (Gamer g: gamers) {
+
+            id.add(g.getId());
+            nom.add(g.getNomG());
+            score.add(g.getScoreG());
         }
     }
 }
