@@ -61,6 +61,31 @@
         android:textColor="@color/White"
         android:textSize="20sp"
         />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Best Score"
+        android:textStyle="bold"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/Coral"
+        android:textSize="30dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
 
+            <ListView
+                android:id="@+id/lvMS"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

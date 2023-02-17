@@ -50,6 +50,11 @@ public class BD extends SQLiteOpenHelper {
         }
 
     }
+    public Cursor getAllData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME , null);
+        return res;
+    }
 
     public List<Gamer> getAllGamers() {
         List<Gamer> gamersList = new ArrayList<Gamer>();

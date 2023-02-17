@@ -11,7 +11,8 @@
         android:layout_height="wrap_content"
         android:text="Best Score"
         android:textColor="@color/OrangeRed"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:layout_width="match_parent"
